@@ -1,0 +1,24 @@
+{
+  "name": "playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+ "scripts": {
+  "test.qa": "cross-env ENV=qa playwright test e2e/Herokulogin.test.ts",
+  "test.uat": "cross-env ENV=uat playwright test e2e/Tutorialsninjalogin.test.ts",
+  "test.prod": "cross-env ENV=prod playwright test e2e/Demoblazelogin.test.ts",
+  "test.all": "start cmd /k npm run test.qa && start cmd /k npm run test.uat && start cmd /k npm run test.prod"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.0.0",
+    "cross-env": "^10.1.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
