@@ -1,0 +1,2 @@
+Fetching baseurl!
+Browser is closing!

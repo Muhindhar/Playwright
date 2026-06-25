@@ -38,10 +38,15 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on',
+    trace: 'retain-on-failure',
     screenshot:'only-on-failure',
     video:'retain-on-failure',
     headless:true,
+    viewport: { width: 1280, height: 720 },//pgsize
+    actionTimeout: 10000,//max timeout
+    navigationTimeout: 30000,//loc
+    ignoreHTTPSErrors: true,//certificat error
+    
   },
 
   /* Configure projects for major browsers */
