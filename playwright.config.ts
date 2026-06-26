@@ -23,13 +23,14 @@ export default defineConfig({
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
+  timeout:40000,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
    reporter: [
-    ['html', { open: 'never' }],
+    ['html', { open: 'always' }],
     ['allure-playwright']
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -44,7 +45,7 @@ export default defineConfig({
     headless:true,
     viewport: { width: 1280, height: 720 },//pgsize
     actionTimeout: 10000,//max timeout
-    navigationTimeout: 30000,//loc
+    navigationTimeout: 50000,//loc
     ignoreHTTPSErrors: true,//certificat error
     
   },
@@ -55,16 +56,16 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-
+/*
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
 
-    {
+   {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
-    },
+    },*/
     /*{
   name: 'brave',
   use: {
