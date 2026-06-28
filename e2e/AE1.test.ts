@@ -11,9 +11,9 @@ test('Register test',async()=>{
     await page.getByRole('link', { name: ' Signup / Login' })
     await page.getByRole('link', { name: ' Signup / Login' }).click();
     await page.getByRole('textbox', { name: 'Name' }).fill("Tamil")
-    await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').fill("tamil0190918@gmail.com")
+    await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').fill("demo01@gmail.com")
     await page.getByRole('button', { name: 'Signup' }).click();
-    await page.locator("//input[@id='password']").fill("1234");
+    await page.locator("//input[@id='password']").fill("121");
     await page.locator("//input[@id='first_name']").fill("Tamil");
     await page.getByRole('textbox', { name: 'Last name *' }).fill("E");
     await page.getByRole('textbox', { name: 'Address * (Street address, P.' }).fill("Salem");

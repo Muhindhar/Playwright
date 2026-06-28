@@ -8,8 +8,8 @@ test("Invalid login", async()=>{
     const page=await context.newPage();
     await page.goto("https://automationexercise.com/");
     await page.getByRole('link', { name: ' Signup / Login' }).click();
-    await page.locator('form').filter({ hasText: 'Login' }).getByPlaceholder('Email Address').fill("tamilkumar027@gmail.com")
-    await page.getByRole('textbox', { name: 'Password' }).fill("Kiot12348900");
+    await page.locator('form').filter({ hasText: 'Login' }).getByPlaceholder('Email Address').fill("demo09@gmail.com")
+    await page.getByRole('textbox', { name: 'Password' }).fill("121");
     await page.getByRole('button', { name: 'Login' }).click();
 
     const msg=await page.getByText('Your email or password is').textContent();
