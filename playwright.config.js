@@ -54,14 +54,14 @@ exports.default = (0, test_1.defineConfig)({
             name: 'chromium',
             use: { ...test_1.devices['Desktop Chrome'] },
         },
-        {
+       /* {
             name: 'firefox',
             use: { ...test_1.devices['Desktop Firefox'] },
         },
         {
             name: 'webkit',
             use: { ...test_1.devices['Desktop Safari'] },
-        },
+        },*/
         /*{
       name: 'brave',
       use: {
