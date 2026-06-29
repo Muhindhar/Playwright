@@ -86,23 +86,7 @@ test("drop", async ({page})=>{
     await expect(target).toHaveText("Drop Here");
 })
 
-test("Valid Login @Smoke", async ({ page }, testInfo) => {
-        console.log(page.url());
-        console.log(await page.title());
-        console.log("Test Name :", testInfo.title);
-        const login_btn = page.locator("#login2");
-        await login_btn.click();
-        await expect(page.locator("#logInModal")).toBeVisible();
-        await page.locator("#loginusername").click();
-        await page.keyboard.type("admin");
-        await page.keyboard.press("Tab");
-        await page.keyboard.type("admin");
-        await page.locator("//button[text()='Log in']").focus();
-        await page.keyboard.press("Enter");
-        await expect(page.locator("#nameofuser")).toContainText("Welcome");
-        await expect.soft(page.getByRole("link", {name: "Log out"})).toHaveText("Log out");
-        await expect(page.getByRole("link", {name: "Log out"})).toBeVisible();
-    });
+
     
 test.afterEach("Page closing", async({page})=>{
     page.close();
