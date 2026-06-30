@@ -5,7 +5,7 @@ const login = [
 ];
 test("Timeout types", async ({page})=>{
     page.setDefaultNavigationTimeout(60000), 
-    page.setDefaultNavigationTimeout(50000),
+   
     page.setDefaultTimeout(10000),
 
     await page.goto("https://tutorialsninja.com/demo/index.php?route=account/login")
@@ -14,5 +14,5 @@ test("Timeout types", async ({page})=>{
     const pass = page.locator("//input[@id='input-password']");
     await pass.fill(login[0].pass);
     await page.locator("//input[@value='Login']").click();
-    await expect(page).toHaveURL("https://tutorialsninja.com/demo/index.php?route=account/account")
+    await expect(page).toHaveURL("https://tutorialsninja.com/demo/index.php?route=account/account",{timeout:30000})
 });

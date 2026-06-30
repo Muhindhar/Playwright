@@ -1,0 +1,27 @@
+[
+    
+    {
+        "url"   :"https://www.demoblaze.com/",
+        "testname" : "valid",
+        "username" : "admin",
+        "password" : "admin",
+        "exp"      : "Success",
+        "expmsg"   : "Welcome"
+    },
+    {
+         "url"   :"https://www.demoblaze.com/",
+        "testname" : "invalid",
+        "username" : "admin",
+        "password" : "2233",
+        "exp"      : "Failure",
+        "expmsg"   : "Wrong password"
+    },
+    {
+         "url"   :"https://www.demoblaze.com/",
+        "testname" : "blank",
+        "username" : "",
+        "password" : "admin",
+        "exp"      : "Failure",
+        "expmsg"   : "Please fill out Username and Password."
+    }
+]

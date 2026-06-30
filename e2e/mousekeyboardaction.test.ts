@@ -1,10 +1,8 @@
 import {test,expect} from '@playwright/test';
-
 test.beforeEach("Hooks", async ({page})=>{
     await page.goto("https://demoqa.com/buttons");
 })
 test("Double click Mouse actions ", async ({page})=>{
-    
     const dblclk = page.locator("//button[@id='doubleClickBtn']");
     dblclk.click({clickCount:2});
     await expect(page.locator("//p[@id='doubleClickMessage']")).toHaveText("You have done a double click");
@@ -65,7 +63,7 @@ test("Downloads method 2", async ({page})=>{
     const prom =  page.waitForEvent("download");
     await page.locator("//a[@id='downloadButton']").click();
     const check = prom;
-    //(await check).saveAs('downloads/downloadmethod1.pdf');
+    (await check).saveAs('downloads/downloadmethod1.pdf');
 })
 
 
@@ -74,7 +72,7 @@ test("Keyboard action", async ({ page }) => {
     const txtbox = page.locator("#target");
     await txtbox.focus();
     await txtbox.press("Enter");
-    //await expect(page.locator("#result")).toHaveText("You entered: ENTER");
+    await expect(page.locator("#result")).toHaveText("You entered: ENTER");
 });
 
 test("drop", async ({page})=>{
@@ -84,10 +82,8 @@ test("drop", async ({page})=>{
 
     await source.dragTo(target);
     await expect(target).toHaveText("Drop Here");
-})
+});
 
-
-    
 test.afterEach("Page closing", async({page})=>{
     page.close();
 });

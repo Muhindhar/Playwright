@@ -7,8 +7,8 @@
     "test:qa": "cross-env ENV=qa playwright test e2e/Herokulogin.test.ts",
     "test:uat": "cross-env ENV=uat playwright test e2e/Tutorialsninjalogin.test.ts",
     "test:prod": "cross-env ENV=prod playwright test e2e/Demoblazelogin.test.ts",
-    "test":"npx playwright test",
-    "lf":"npx playwright test --last-failed"
+    "test": "npx playwright test",
+    "lf": "npx playwright test --last-failed"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,7 @@
     "typescript": "^6.0.3"
   },
   "dependencies": {
+    "csv-parse": "^7.0.0",
     "dotenv": "^17.4.2"
   }
 }
