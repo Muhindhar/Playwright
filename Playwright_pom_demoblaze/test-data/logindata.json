@@ -1,0 +1,10 @@
+{
+    "validlogin":{
+        "username" : "Muhindhar",
+        "password" : "muhi122181"
+    },
+    "invalidlogin":{
+        "username" : "Muhindhar",
+        "password" : "wrongpassword"
+    }
+}
